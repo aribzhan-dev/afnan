@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name shop.example.kz;
+    access_log /var/log/nginx/kip-store.access.log;
+    error_log /var/log/nginx/kip-store.error.log;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/kip-store-acme;
+    }
+
+    location / {
+        return 503;
+    }
+}
